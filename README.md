@@ -57,77 +57,10 @@ In the same Terminal or Command Prompt window, run:
 ```bash
 pip install boto3
 ```
+## 📦 Step 3: Run 'llamaBedock.py
 
-This installs the AWS software library for Python. You should see some download progress.
+python llamabedrock.py
 
-## 🎬 Step 3: Test Your Connection
-
-1. Create a new file called `test_llama4.py`
-2. Copy this entire code block into it:
-
-```python
-import boto3
-import json
-
-print("Connecting to AWS Bedrock...")
-
-# Create a connection to Bedrock
-try:
-    bedrock = boto3.client(
-        service_name="bedrock-runtime",
-        region_name="us-west-2"
-    )
-    print("✓ Connected to AWS successfully!")
-except Exception as e:
-    print("✗ Could not connect to AWS. Check your credentials.")
-    print(f"Error: {e}")
-    exit()
-
-# The model we want to use
-MODEL_ID = "us.meta.llama4-maverick-17b-instruct-v1:0"
-
-# Your question
-question = "What is artificial intelligence? Explain in simple terms."
-
-print(f"\nAsking Llama 4: {question}")
-print("Waiting for response...")
-
-try:
-    # Send the question to Llama 4
-    response = bedrock.converse(
-        modelId=MODEL_ID,
-        messages=[
-            {
-                "role": "user",
-                "content": [{"text": question}]
-            }
-        ]
-    )
-    
-    # Get the answer
-    answer = response["output"]["message"]["content"][0]["text"]
-    print(f"\nLlama 4's Answer:\n{answer}")
-    
-except Exception as e:
-    print(f"\n✗ Could not get response from Llama 4")
-    print(f"Error: {e}")
-    
-    if "AccessDeniedException" in str(e):
-        print("\nThis means your account doesn't have access to Llama 4.")
-        print("Please contact your AWS administrator.")
-    elif "ResourceNotFoundException" in str(e):
-        print("\nThe model might not be available in your region.")
-        print("Please contact your AWS administrator.")
-```
-
-3. Save the file
-4. In your terminal/command prompt (where you set the credentials), navigate to where you saved the file:
-   - Windows: `cd C:\Users\YourName\Desktop` (or wherever you saved it)
-   - Mac/Linux: `cd ~/Desktop` (or wherever you saved it)
-
-5. Run the test:
-```bash
-python test_llama4.py
 ```
 
 ## What Success Looks Like
@@ -164,23 +97,5 @@ Llama 4's Answer:
 - Try `python3` instead of `python`
 - On Windows, you might need to use the full path: `C:\Python39\python.exe`
 
-##  Next Steps
 
-Once the test works, create a new file `chat_with_llama.py`:
 
-```python
-import boto3
-
-# Set up connection
-bedrock = boto3.client(
-    service_name="bedrock-runtime",
-    region_name="us-west-2"
-)
-
-MODEL_ID = "us.meta.llama4-maverick-17b-instruct-v1:0"
-
-# Keep chatting until user types 'quit'
-print("Chat with Llama 4! Type 'quit' to exit.\n")
-
-while True:
-    # Get user input
