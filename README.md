@@ -17,6 +17,10 @@ A beginner-friendly guide to using Meta's Llama 4 Maverick model through AWS Bed
    - Secret Access Key (looks like: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY)
 2. **Python installed** - Version 3.8 or newer
 3. **A text editor** - Notepad++, VS Code, or even regular Notepad
+4. A convenience script config.sh has been created in the repo
+5. Add your keys to the file.  DO NOT share keys or this file (no public repos please!)
+6. Run chmod =x ./config.sh to make it executable
+7. Run with ./config.sh 
 
 ## 🚀 Step 1: Set Up Your AWS Credentials
 
