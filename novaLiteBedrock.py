@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple Amazon Nova Chat Application
+Simple Amazon LITE Nova Chat Application
 ==============================
 This is a beginner-friendly application to chat with Amazon Nova on AWS Bedrock.
 It includes lots of comments to explain what each part does!
