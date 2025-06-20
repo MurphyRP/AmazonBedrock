@@ -5,7 +5,7 @@ A beginner-friendly guide to using AI language models through AWS Bedrock.
 ## What You'll Learn
 - How to set up your AWS credentials on your computer
 - How to run your first conversation with AI models on Bedrock
-- Understanding the basics without being a developer
+- Understanding the basics to leverage in the AI Challenge!
 
 ##  What You'll Need
 1. **Your AWS credentials** (provided by your admin)
